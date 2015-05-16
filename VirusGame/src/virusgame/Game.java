@@ -58,7 +58,7 @@ public class Game extends State{
         nodes.add(playernode);
         
         Random r = new Random();
-        int neighbors=r.nextInt(50)+1;
+        int neighbors=r.nextInt(5)+1;
         
         for(int i=0;i<neighbors;i++){
             int x=playernode.getX();
@@ -81,5 +81,9 @@ public class Game extends State{
                 return false;
         }
         return true;
+    }
+    
+    public void handleInput(){
+        
     }
 }

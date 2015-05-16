@@ -30,16 +30,10 @@ public class Host extends JPanel implements KeyListener,MouseListener,Runnable{
         setFocusable(true);
         requestFocus();
         setBackground(Color.BLACK);
+        addKeyListener(this);
+	thread = new Thread(this);
+	thread.start();
     }
-    
-    public void addNotify() {
-		super.addNotify();
-		if(thread == null) {
-			addKeyListener(this);
-			thread = new Thread(this);
-			thread.start();
-		}
-	}
     
     @Override
     public void run() {
@@ -82,6 +76,7 @@ public class Host extends JPanel implements KeyListener,MouseListener,Runnable{
     @Override
     public void keyPressed(KeyEvent ke) {
         KeyBoard.KeyPressed(ke.getKeyCode(),true);
+        currentState.handleInput();
     }
     
     @Override
