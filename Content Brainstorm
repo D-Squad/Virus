@@ -1,0 +1,100 @@
+Two modes of view: Basic and Advanced
+
+Game Types:
+  - Pandemic
+  - Governmental
+  - Celebrity
+  - Finance
+  - Terrorist
+
+Types of Virus:
+  - Heartbleed
+  - Worm
+  - Trojan
+  - Exe
+
+Types of Infectable Devices:
+  - PC's
+  - Phones
+  - Business Networks
+  - TV's (maybe)
+  - Security Cameras/Systems
+  - Utility Systems (traffic lights, lights, power outlets, phones)
+  - Government
+
+Upgradables:
+(Tiered Viruses)
+    Corruption Level:
+      - Detirmines how infected a computer is
+      - Low level/Assembly
+    
+    Stength vs Other Virus:
+    
+    Contagability:
+      - How many attacks
+    
+    Resilience to Anti-Virus:
+    
+    Subtlty:
+      - Detection
+      
+    Effects/Symptoms:
+    
+    Breakthrough Potential
+    
+    Internet
+    
+    Stability
+    
+    Type of Attack/Utility
+      - What the virus does
+    
+    Employ Accomplice
+      - Raises other stats and makes virus better
+      - One time deal
+      - Not guarenteed to work
+
+Enemies:
+    National Threats:
+    (Suspicion, Tracing)
+      - FBI
+      - Brazil
+      - EU/Germany/MI6
+      - China
+      - Russia
+      - India
+      - Austrailia
+      - South America
+      
+    Enemy Virus:
+      - Behaves same way as your virus does
+    
+    Indivudial Hackers:
+      - Private
+      - Government
+
+Resources:
+    Money
+      - From personal computers
+      - From banks
+        - Slow over time but more
+        - Instant but less
+    Processing Power
+
+Virus Civil War:
+  - Not possible in Pandemic
+  - Mutation out of user control
+  - Openly hostile
+
+Victory Conditions:
+    Pandemic - infect all world computers
+             - infect enemy countries
+    Government - defeat enemy countries without losing critical information
+    Celebrity - successfully steal information
+    Financial - make x amount of money
+    Terrorist - end of the world
+
+Defeat Condtions:
+  - Virus eliminated
+  - Government finds you
+  
