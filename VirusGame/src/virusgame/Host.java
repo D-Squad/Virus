@@ -1,7 +1,6 @@
 package virusgame;
 
 import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -20,6 +19,7 @@ public class Host extends JPanel implements KeyListener,MouseListener,Runnable{
     private Thread thread;
     private boolean running;
     private int FPS=30;
+    private int count;
     
     private State currentState;
     
@@ -46,13 +46,17 @@ public class Host extends JPanel implements KeyListener,MouseListener,Runnable{
        long start;
        long elapsed;
        long wait;
-
+       
+       //Temporary Thread Fix 
+       //Actual FPS is NOT at 30. Does not directly correspond to variable.
        while(running){
            update();
            repaint();
            
+           count++;
+           System.out.println(count);
            try{
-                Thread.sleep(FPS);
+                Thread.sleep((long) FPS);
            }catch(Exception e){e.printStackTrace();}
        }   
     }
@@ -76,7 +80,7 @@ public class Host extends JPanel implements KeyListener,MouseListener,Runnable{
     public void keyPressed(KeyEvent ke) {
         KeyBoard.KeyPressed(ke.getKeyCode(),true);
     }
-
+    
     @Override
     public void keyReleased(KeyEvent ke) {
         KeyBoard.KeyPressed(ke.getKeyCode(),false);
