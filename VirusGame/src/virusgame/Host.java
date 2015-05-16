@@ -1,6 +1,8 @@
 package virusgame;
 
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -15,24 +17,69 @@ public class Host extends JPanel implements KeyListener,MouseListener,Runnable{
     
     public static Dimension screensize;
     
+    private Thread thread;
+    private boolean running;
+    private int FPS=30;
+    
+    private State currentState;
+    
     public Host(Dimension screensize) {
         this.screensize=screensize;
+        setFocusable(true);
+        requestFocus();
     }
-
+    
+    public void addNotify() {
+		super.addNotify();
+		if(thread == null) {
+			addKeyListener(this);
+			thread = new Thread(this);
+			thread.start();
+		}
+	}
+    
     @Override
     public void run() {
+       running=true;
+       currentState=new Menu();
+       
+       long start;
+       long elapsed;
+       long wait;
+
+       while(running){
+           update();
+           repaint();
+           
+           try{
+                Thread.sleep(FPS);
+           }catch(Exception e){e.printStackTrace();}
+       }   
+    }
+    
+    public void paint(Graphics2D g){
+        super.paint(g);
+        currentState.draw(g);
+        g.dispose();
+    }
+    
+    private void update(){
+        
     }
     
     @Override
     public void keyTyped(KeyEvent ke) {
+        
     }
 
     @Override
     public void keyPressed(KeyEvent ke) {
+        KeyBoard.KeyPressed(ke.getKeyCode(),true);
     }
 
     @Override
     public void keyReleased(KeyEvent ke) {
+        KeyBoard.KeyPressed(ke.getKeyCode(),false);
     }
 
     @Override
