@@ -1,6 +1,8 @@
 package virusgame;
 
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -27,6 +29,7 @@ public class Host extends JPanel implements KeyListener,MouseListener,Runnable{
         this.screensize=screensize;
         setFocusable(true);
         requestFocus();
+        setBackground(Color.BLACK);
     }
     
     public void addNotify() {
@@ -41,7 +44,7 @@ public class Host extends JPanel implements KeyListener,MouseListener,Runnable{
     @Override
     public void run() {
        running=true;
-       currentState=new Menu();
+       currentState=new Game(Game.MODE_PANDEMIC);
        
        long start;
        long elapsed;
@@ -54,21 +57,21 @@ public class Host extends JPanel implements KeyListener,MouseListener,Runnable{
            repaint();
            
            count++;
-           System.out.println(count);
+           //System.out.println(count);
            try{
                 Thread.sleep((long) FPS);
            }catch(Exception e){e.printStackTrace();}
        }   
     }
     
-    public void paint(Graphics2D g){
+    public void paint(Graphics g){
         super.paint(g);
-        currentState.draw(g);
+        currentState.draw((Graphics2D) g);
         g.dispose();
     }
     
     private void update(){
-        
+        currentState.update();
     }
     
     @Override

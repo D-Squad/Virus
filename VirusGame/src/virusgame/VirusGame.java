@@ -4,15 +4,11 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
 
-/**
- *
+/**Goals to implement: Full gui, virus menu, two separate views (internet,hardware)
+ *Zoomable gui, Enemy factions
  * @author Damian Suski
  */
 public class VirusGame {
-
-    /**
-     * 
-     */
     
     public VirusGame(){
         JFrame window = new JFrame("Virus");
